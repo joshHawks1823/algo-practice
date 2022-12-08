@@ -6,20 +6,35 @@
 
 
 
-function twoSum(nums, target) {
+// function twoSum(nums, target) {
 
-	const comp = new Map();
-	const len = nums.length;
+// 	const comp = new Map();
+// 	const len = nums.length;
 
-	for (let i = 0; i < len; i++) {
-		if(comp[nums[i]] >= 0) {
-			return [comp[nums[i]], i]
-		}
-		comp[target - nums[i]] = i;
-	}
-	return [];
-	}
+// 	for (let i = 0; i < len; i++) {
+// 		if(comp[nums[i]] >= 0) {
+// 			return [comp[nums[i]], i]
+// 		}
+// 		comp[target - nums[i]] = i;
+// 	}
+// 	return [];
+// 	}
 
-const nums = [2, 7, 11, 15];
+// const nums = [2, 7, 11, 15];
 
-console.log(twoSum(nums, 9))
+// console.log(twoSum(nums, 9))
+
+function isValidSubsequence(array, sequence) {
+  let idx = 0;
+  for (let i=0; i < array.length; i++) {
+    if (idx === sequence.length) {
+      break;
+    }
+    if (array[i] === sequence[idx] && idx < sequence.length) {
+      idx++;
+    }
+  }
+    return idx === sequence.length;
+}
+
+console.log(isValidSubsequence([1,2,3,4],[1,3,4]))
